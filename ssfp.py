@@ -29,11 +29,11 @@ def sketch(datas, width):
 if __name__ == "__main__":
     waves = []
     while True:
-        amp = input("amplitude > ")
-        if amp == "":
+        amp_freq = input("frequency and amplitude > ")
+        if amp_freq == "":
             break
-        freq = input("frequency > ")
-        waves.append([float(amp), float(freq)])
+        amp_freq = amp_freq.split(' ')
+        waves.append([float(amp_freq[1]), float(amp_freq[0])])
     periods = float(input("number of periods > "))
     plots = int(input("number of plots > "))
     mode = int(input("display mode(0 - 2) > "))
