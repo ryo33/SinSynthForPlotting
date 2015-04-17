@@ -17,7 +17,6 @@ def sketch(datas, width):
     ratio = width / (data_max - data_min)
     datas = [int(round(data * ratio)) for data in datas]
     offset = - int(round(data_min * ratio)) + 1
-    print("offset", offset, "ratio", ratio)
     for data in datas:
         if data == 0:
             print(" " * (offset - 1) + "*")
