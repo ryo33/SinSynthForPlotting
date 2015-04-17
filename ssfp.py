@@ -37,9 +37,12 @@ if __name__ == "__main__":
         waves.append([float(amp), float(freq)])
     periods = float(input("number of periods > "))
     plots = int(input("number of plots > "))
-    mode = int(input("display mode(0 - 3) > "))
+    mode = int(input("display mode(0 - 2) > "))
     result = ssfp(waves, periods, plots)
     if mode == 1:
+        ratio = float(input("ratio > "))
+        print(", ".join([str(value * ratio) for value in result]))
+    elif mode == 2:
         sketch(result, int(input("display width > ")))
     else:
         ratio = float(input("ratio > "))
