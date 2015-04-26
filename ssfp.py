@@ -1,13 +1,12 @@
 import math
 
-def ssfp(waves, periods, plots):
+def ssfp(waves, periods, division):
     result = []
     length = 2 * math.pi / min(waves, key=lambda a: a[1])[1] * periods
-    ratio = length / plots
-    for i in range(0, plots):
+    for i in range(0, division + 1):
         value = 0;
         for wave in waves:
-            value += wave[0] * math.sin(wave[1] * i * ratio)
+            value += wave[0] * math.sin(wave[1] * i * length / division)
         result.append(value)
     return result
 
@@ -35,9 +34,9 @@ if __name__ == "__main__":
         amp_freq = amp_freq.split(' ')
         waves.append([float(amp_freq[1]), float(amp_freq[0])])
     periods = float(input("number of periods > "))
-    plots = int(input("number of plots > "))
+    division = int(input("number of division > "))
     mode = int(input("display mode(0 - 2) > "))
-    result = ssfp(waves, periods, plots)
+    result = ssfp(waves, periods, division)
     if mode == 1:
         ratio = float(input("ratio > "))
         print(", ".join([str(value * ratio) for value in result]))
