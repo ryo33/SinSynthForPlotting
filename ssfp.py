@@ -44,5 +44,6 @@ if __name__ == "__main__":
         sketch(result, int(input("display width > ")))
     else:
         ratio = float(input("ratio > "))
+        fractional_part = int(input("number of fractional part > "))
         for i in range(0, len(result)):
-            print(str(i) + " " + str(round(result[i] * ratio, 3)))
+            print(str(i) + " " + str(round(result[i] * ratio, fractional_part)))
