@@ -45,4 +45,5 @@ if __name__ == "__main__":
         sketch(result, int(input("display width > ")))
     else:
         ratio = float(input("ratio > "))
-        print("\n".join([str(value * ratio) for value in result]))
+        for i in range(0, len(result)):
+            print(str(i) + " " + str(round(result[i] * ratio, 3)))
